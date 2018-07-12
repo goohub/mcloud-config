@@ -1,11 +1,10 @@
+debug: true
+
 spring:
   profiles:
     active:
     - dev
 ---
-server:
-  port: 8001
-
 spring:
   profiles: dev
   application:
@@ -22,6 +21,9 @@ spring:
       max-total: 10
       max-wait-millis: 200
 
+server:
+  port: 8001
+
 mybatis:
   type-aliases-package: cn.xmut.mcloud.domain
   config-location: classpath:mybatis/mybatis-config.xml
@@ -37,9 +39,6 @@ eureka:
 
 
 ---
-server:
-  port: 8001
-
 spring:
   profiles: test
   application:
@@ -55,6 +54,9 @@ spring:
       min-idle: 5
       max-total: 10
       max-wait-millis: 200
+
+server:
+  port: 8001
 
 mybatis:
   type-aliases-package: cn.xmut.mcloud.domain
